@@ -29,7 +29,6 @@ const LinkList = () => {
                     ))}
                 </>
             )}
-            Here!
         </div>
     );
 };

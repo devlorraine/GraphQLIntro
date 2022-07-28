@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FEED_QUERY } from './LinkList';
 import { useMutation, gql } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,6 +29,20 @@ const CreateLink = () => {
         variables: {
             description: formState.description,
             url: formState.url
+        },
+        update: (cache, { data: { post } }) => {
+            const data = cache.readQuery({
+                query: FEED_QUERY,
+            });
+            
+            cache.writeQuery({
+                query: FEED_QUERY,
+                data: {
+                    feed: {
+                        links: [post, ...data.feed.links]
+                    }
+                },
+            });
         },
         onCompleted: () => navigate('/')
     });

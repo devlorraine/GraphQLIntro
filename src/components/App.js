@@ -1,9 +1,10 @@
-import React from 'react';
-import CreateLink from './CreateLink';
-import Header from './Header';
-import LinkList from './LinkList';
-import Login from './Login';
-import { Route, Routes } from 'react-router-dom';
+import React              from 'react';
+import CreateLink         from './CreateLink';
+import Header             from './Header';
+import LinkList           from './LinkList';
+import Login              from './Login';
+import { Route, Routes }  from 'react-router-dom';
+import Search             from './Search';
 
 const App = () => {
   return (
@@ -16,12 +17,16 @@ const App = () => {
             element={<LinkList/>}
           />
           <Route
-            path="/create"
+            path="/submit"
             element={<CreateLink/>}
           />
           <Route
             path="/login"
             element={<Login/>}
+          />
+          <Route
+            path="/search"
+            element={<Search/>}
           />
         </Routes>
       </div>

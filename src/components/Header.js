@@ -9,24 +9,23 @@ const Header = () => {
         <div className="flex pa1 justify-between nowrap orange">
             <div className="flex flex-fixed black">
                 <Link
-                    to="/"
-                    className="no-underline black"
+                    to="/" className="no-underline black"
                 >
                     <div className="fw7 mr1">Hacker News</div>
                 </Link>   
                 <Link to="/" className="ml1 no-underline black">
-                    new
+                    New
                 </Link>
                 <div className="ml1">|</div>
                 <Link to="/search" className="ml1 no-underline black">
-                    search
+                    Search
                 </Link>
 
                 {authToken && (
                     <div className="flex">
                         <div className="ml1">|</div>
-                        <Link to="/create" className="ml1 no-underline black">
-                            submit
+                        <Link to="/submit" className="ml1 no-underline black">
+                            Submit
                         </Link>
                     </div>
                 )}
@@ -40,14 +39,14 @@ const Header = () => {
                             navigate(`/`);
                         }}
                     >
-                        logout
+                        Logout
                     </div>
                 ) : (
                     <Link
                         to="/login"
                         className="ml1 no-underline black"
                     >
-                        login
+                        Login
                     </Link>
                 )}
             </div>

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { AUTH_TOKEN } from '../constants';
+import React, { useState }  from 'react';
+import { AUTH_TOKEN }       from '../constants';
 import { useMutation, gql } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate }      from 'react-router-dom';
 
 const LOGIN_MUTATION = gql`
     mutation LoginMutation(

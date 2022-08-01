@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React              from 'react';
+import ReactDOM           from 'react-dom';
 import './styles/index.css';
-import App from './components/App';
-import { BrowserRouter } from 'react-router-dom';
-import { setContext } from '@apollo/client/link/context';
-import { AUTH_TOKEN } from './constants';
+import App                from './components/App';
+import { BrowserRouter }  from 'react-router-dom';
+import { setContext }     from '@apollo/client/link/context';
+import { AUTH_TOKEN }     from './constants';
 
-import { split } from '@apollo/client';
-import { WebSocketLink } from '@apollo/client/link/ws';
+import { split }          from '@apollo/client';
+import { WebSocketLink }  from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
 
 import {

@@ -1,10 +1,10 @@
-import React              from 'react';
-import CreateLink         from './CreateLink';
-import Header             from './Header';
-import LinkList           from './LinkList';
-import Login              from './Login';
-import { Route, Routes }  from 'react-router-dom';
-import Search             from './Search';
+import React      from 'react';
+import CreateLink from './CreateLink';
+import Header     from './Header';
+import LinkList   from './LinkList';
+import Login      from './Login';
+import {Navigate, Route, Routes} from 'react-router-dom';
+import Search     from './Search';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<LinkList/>}
+            element={<Navigate replace to="/new/1" />}
           />
           <Route
             path="/submit"
@@ -27,6 +27,14 @@ const App = () => {
           <Route
             path="/search"
             element={<Search/>}
+          />
+          <Route
+            path="/top"
+            element={<LinkList/>}
+          />
+          <Route
+            path="/new/:page"
+            element={<LinkList/>}
           />
         </Routes>
       </div>
